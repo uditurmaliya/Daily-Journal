@@ -1,0 +1,41 @@
+<%- include("partials/header"); -%> 
+
+<div class="home">
+    
+    <div class="compose-blog">
+        <a id="compose" href="/compose">CREATE</a>
+    </div>
+
+    <h1>Home</h1>
+    <p><%=startingContent%></p>
+
+    <% Blogs.forEach( function (blog) { %>
+        <div class="newblog">
+        <h1><%= blog.title %></h1>
+        <!-- only showing 100 char=>in homepage ->using JS method substring -->
+        <%if(blog.content.length>300) { %>
+            <p><%= blog.content.substring(0,300) + "..." %>
+        <%} else {%>
+            <p><%=blog.content%></p>
+        <%}%>
+            <!-- including anchor tag just before the closing paragrapph tag so that they both are in same line -->
+        <%if(blog.content.length>300) { %>
+            <a href="/Blogs/<%=blog.title%> " name="newblog" value="blog.title">Read More</a>
+        <%} %>
+        
+
+        <form action="/delete" method="post">
+            <div class="deleteItem">
+                <label>
+                <input type="checkbox" style="display:none" name = "checkbox" value = "<%= blog._id %>"onChange="this.form.submit()" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                    <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                  </svg></label>
+            </div>
+        </form>
+    </div>
+        </p>  
+
+    <% }) %>
+</div>
+<%- include("partials/footer"); -%>

@@ -1,0 +1,87 @@
+.container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+.navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+.navbar-nav  li a:hover {
+    color: #1abc9c !important;
+}
+.home,.post {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+.home,.post {
+	padding-bottom:140px;
+}
+body {
+    position:relative;
+}
+
+.footer {
+    position:absolute;
+	bottom: 0;
+	text-align: center;
+	width: 100%;
+	height: 100px;
+	background-color: #C3DBD9;
+}
+
+.footer p {
+	
+    padding-top:50px;
+
+	font-size: 13px;
+    font-weight:bold;
+    letter-spacing: 1px;
+    color: #143F6B;
+}
+.compose-blog{
+    padding-top:15px;
+    padding-right:80px;
+    padding-bottom:20px;
+}
+#compose{
+    
+    background-color: #DDDDDD;
+    float:right;
+    padding-right:10px;
+    padding-left:10px;
+    padding-top:7px;
+    padding-bottom:5px;
+    text-decoration:none;
+    font-size: 15px;
+    letter-spacing: 3px;
+    color:827397;
+    font-weight:bold;
+    border-radius:5px;
+}
+#compose  li a:hover {
+    color: #1abc9c !important;
+}
+body{
+    background-image: url("https://transparenttextures.com/patterns/az-subtle.png");
+    
+}
+.compose,.about,.contact{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.deleteItem{
+    float:right;
+    width:20px;
+    top:0;
+    right:0;
+    margin-right:80px;
+    color:#B20600;
+   
+}
